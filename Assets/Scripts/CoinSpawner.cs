@@ -4,19 +4,15 @@ using UnityEngine;
 
 public class CoinSpawner : MonoBehaviour
 {
-    public GameObject coinPrefab;    
-    public Transform spawnPoint;     
-    public float lifetime = 5f;      
+    Rigidbody rb;
 
     void Start()
     {
-        StartCoroutine(SpawnAndDisappear());
+        rb = GetComponent<Rigidbody>();
     }
 
-    IEnumerator SpawnAndDisappear()
+    void Update()
     {
-        GameObject coin = Instantiate(coinPrefab, spawnPoint.position, Quaternion.identity);
-        yield return new WaitForSeconds(lifetime);
-        coin.SetActive(false);
+        transform.Rotate(0, 2, 0);
     }
 }

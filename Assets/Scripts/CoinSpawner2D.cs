@@ -15,10 +15,7 @@ public class CoinSpawner2D : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void Update()
-    {
-        transform.Rotate(0, 2, 0); 
-    }
+    
 
     IEnumerator SpawnAndDisappear()
     {   
